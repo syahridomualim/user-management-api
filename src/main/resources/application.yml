@@ -8,7 +8,7 @@ spring:
     password: 4r6i3;XIUJ+2ji
     username: pelajar1
   jpa:
-    show-sql: true
+    show-ql: true
     hibernate:
       ddl-auto: update
     properties:
