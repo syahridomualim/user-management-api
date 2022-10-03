@@ -1,7 +1,3 @@
-server:
-  port: ${PORT:8081}
-
-
 spring:
   datasource:
     url: jdbc:mysql://185.2.168.15:3306/pelajar1_user_db
