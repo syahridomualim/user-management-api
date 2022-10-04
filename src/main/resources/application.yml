@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://185.2.168.15:3306/pelajar1_user_db
-    password: 4r6i3;XIUJ+2ji
-    username: pelajar1
+    url: ${DATABASE_USERNAME:jdbc:mysql://185.2.168.15:3306/pelajar1_user_db}
+    password: ${DATABASE_PASSWORD:4r6i3;XIUJ+2ji}
+    username: ${DATABASE_USERNAME:pelajar1_user}
   jpa:
     show-ql: true
     hibernate:
