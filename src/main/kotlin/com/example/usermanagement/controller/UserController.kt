@@ -1,8 +1,8 @@
 package com.example.usermanagement.controller
 
+import com.example.usermanagement.entity.User
 import com.example.usermanagement.model.HttpResponse
 import com.example.usermanagement.model.UserRequest
-import com.example.usermanagement.entity.User
 import com.example.usermanagement.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*
 import java.time.LocalDateTime
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/", "/user")
 class UserController @Autowired constructor(
-    private val userService: UserService
-){
+    private val userService: UserService,
+) {
 
     @PostMapping("/save")
-    fun addUser(@RequestBody user: UserRequest) : HttpResponse {
+    fun addUser(@RequestBody user: UserRequest): HttpResponse {
 
         val userData = User(
             id = null,
@@ -37,7 +37,7 @@ class UserController @Autowired constructor(
     }
 
     @GetMapping("/{query}")
-    fun getUserByName(@PathVariable("query")query: String) : HttpResponse {
+    fun getUserByName(@PathVariable("query") query: String): HttpResponse {
         val listUsersByName = userService.userByName(query)
 
         return HttpResponse(
